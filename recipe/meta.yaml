@@ -12,7 +12,7 @@ source:
       - win.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [linux]
   run_exports:
     - {{ pin_subpackage("argp-standalone", max_pin='x.x' ) }}
