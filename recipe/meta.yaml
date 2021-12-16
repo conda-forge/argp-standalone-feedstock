@@ -14,7 +14,7 @@ source:
 
 build:
   number: 1
-  skip: true  # [linux]
+  skip: true  # [linux and osx]
   run_exports:
     - {{ pin_subpackage("argp-standalone", max_pin='x.x' ) }}
 
@@ -30,8 +30,8 @@ requirements:
 
 test:
   commands:
-    - test -f ${PREFIX}/lib/libargp.a
-    - test -f ${PREFIX}/include/argp.h
+    # - test -f ${PREFIX}/lib/libargp.a
+    # - test -f ${PREFIX}/include/argp.h
 
 about:
     home: https://www.lysator.liu.se/~nisse/misc

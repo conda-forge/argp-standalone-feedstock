@@ -1,13 +1,17 @@
 diff --git a/argp-standalone/argp-fmtstream.h b/argp-standalone/argp-fmtstream.h
-index 6198cde..2aafcb8 100644
+index 6198cde..f3cee24 100644
 --- a/argp-standalone/argp-fmtstream.h
 +++ b/argp-standalone/argp-fmtstream.h
-@@ -28,7 +28,9 @@
+@@ -28,7 +28,13 @@
  
  #include <stdio.h>
  #include <string.h>
 +#if HAVE_UNISTD_H
  #include <unistd.h>
++#endif
++
++#ifdef _WIN32
++typedef ptrdiff_t ssize_t;
 +#endif
  
  #if _LIBC || (defined (HAVE_FLOCKFILE) && defined(HAVE_PUTC_UNLOCKED) \
