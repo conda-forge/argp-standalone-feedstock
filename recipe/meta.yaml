@@ -14,7 +14,7 @@ source:
 
 build:
   number: 1
-  skip: true  # [linux and osx]
+  skip: true  # [linux or osx]
   run_exports:
     - {{ pin_subpackage("argp-standalone", max_pin='x.x' ) }}
 
