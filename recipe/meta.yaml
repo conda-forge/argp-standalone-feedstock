@@ -9,7 +9,8 @@ source:
     url: https://www.lysator.liu.se/~nisse/misc/{{ name }}-{{ version }}.tar.gz
     sha256: dec79694da1319acd2238ce95df57f3680fea2482096e483323fddf3d818d8be
     patches:
-      - win.patch
+      - win.patch     # [win]
+      - unistd.patch  # [win]
 
 build:
   number: 1
