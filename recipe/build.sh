@@ -7,5 +7,6 @@ mkdir -p ${PREFIX}/lib ${PREFIX}/include
 
 make -j${CPU_COUNT}
 
-cp libargp.a ${PREFIX}/lib
-cp argp.h ${PREFIX}/include
+make install
+# cp libargp.a ${PREFIX}/lib
+# cp argp.h ${PREFIX}/include

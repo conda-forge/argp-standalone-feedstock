@@ -8,17 +8,22 @@ package:
 source:
     url: https://www.lysator.liu.se/~nisse/misc/{{ name }}-{{ version }}.tar.gz
     sha256: dec79694da1319acd2238ce95df57f3680fea2482096e483323fddf3d818d8be
+    patches:
+      - win.patch
 
 build:
   number: 0
-  skip: true  # [win or linux]
+  skip: true  # [linux]
   run_exports:
     - {{ pin_subpackage("argp-standalone", max_pin='x.x' ) }}
 
 requirements:
   build:
     - {{ compiler('c') }}
-    - make
+    - make         # [unix]
+    - m2-autoconf  # [win]
+    - m2-automake  # [win]
+    - m2-libtool   # [win]
 
 test:
   commands:
