@@ -1,4 +1,4 @@
-meson setup builddir
+meson setup builddir --prefix=%LIBRARY_PREFIX% -Dlibdir=lib
 
 ninja -C builddir
 
