@@ -22,8 +22,10 @@ requirements:
 
 test:
   commands:
-    - test -f ${PREFIX}/lib/libargp.a  # [unix]
+    - test -f ${PREFIX}/lib/libargp.a   # [unix]
     - test -f ${PREFIX}/include/argp.h  # [unix]
+    - if not exist %LIBRARY_PREFIX%\lib\libargp.a (exit 1)   # [win]
+    - if not exist %LIBRARY_PREFIX%\include\argp.h (exit 1)  # [win]
 
 about:
     home: https://www.lysator.liu.se/~nisse/misc
