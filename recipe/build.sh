@@ -1,6 +1,6 @@
 #!/bin/bash
 
-meson setup builddir --prefix=$PREFIX
+meson setup builddir ${MESON_ARGS} --prefix=$PREFIX -Dlibdir=lib
 
 ninja -C builddir
 
