@@ -1,13 +1,7 @@
 #!/bin/bash
 
-CFLAGS="${CFLAGS} -std=c90"
+meson setup builddir --prefix=$PREFIX
 
-mkdir -p ${PREFIX}/lib ${PREFIX}/include
-./configure --prefix=${PREFIX}
+ninja -C builddir
 
-make -j${CPU_COUNT}
-
-make install
-
-# cp libargp.a ${PREFIX}/lib
-# cp argp.h ${PREFIX}/include
+ninja install -C builddir
